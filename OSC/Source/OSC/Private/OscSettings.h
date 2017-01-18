@@ -8,7 +8,7 @@
 class UOscDispatcher;
 
 
-UCLASS(config=Engine)
+UCLASS(Config=Engine, DefaultConfig)
 class UOscSettings : public UObject
 {
     GENERATED_BODY()
@@ -43,6 +43,9 @@ public:
      */
     UPROPERTY(Config, EditAnywhere, Category=Input)
     TArray<FString> Inputs;
+
+    UPROPERTY(Config, EditAnywhere, Category=Network)
+    bool MulticastLoopback;
 
 public:
     void InitSendTargets();
